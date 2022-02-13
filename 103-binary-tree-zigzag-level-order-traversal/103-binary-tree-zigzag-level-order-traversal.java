@@ -18,7 +18,7 @@ class Solution {
         List<List<Integer>> mainList = new LinkedList<List<Integer>>() ;
         
         if(root == null) return mainList ;
-        int count = 0  ;
+        boolean leftToRight = true  ;
         Queue<TreeNode> q = new LinkedList<>() ;
         
         q.offer(root);
@@ -32,10 +32,10 @@ class Solution {
              if(q.peek().left != null) q.offer(q.peek().left);
              if(q.peek().right != null) q.offer(q.peek().right) ;
                 
-            if(count % 2 == 0) sublist.add(q.poll().val);
+            if(leftToRight) sublist.add(q.poll().val);
             else sublist.add(0 , q.poll().val);
            }
-          count++ ;
+          leftToRight = !leftToRight ;
           mainList.add(sublist);
         }
      return mainList ;
