@@ -15,11 +15,11 @@
  */
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> mainList = new LinkedList<List<Integer>>() ;
+        List<List<Integer>> mainList = new ArrayList<List<Integer>>() ;
         
         if(root == null) return mainList ;
         boolean leftToRight = true  ;
-        Queue<TreeNode> q = new LinkedList<>() ;
+        Queue<TreeNode> q = new LinkedList<TreeNode>() ;
         
         q.offer(root);
       while(!q.isEmpty()){
