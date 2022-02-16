@@ -14,18 +14,7 @@
  * }
  */
 
-class Pair2{
-    int x ;
-    int y ;
-    TreeNode node ;
 
-    public Pair2(int xaxis ,int yaxis , TreeNode nod){
-        this.x = xaxis ;
-        this.y = yaxis ;
-        this.node = nod ;
-    }
-
-}
 class Solution {
      public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
@@ -37,6 +26,7 @@ class Solution {
         if(curr == null){
             return;
         }
+        
         if(currDepth == result.size()){
             result.add(curr.val);
         }
