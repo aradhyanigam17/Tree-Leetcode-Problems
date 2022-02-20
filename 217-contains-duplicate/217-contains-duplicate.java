@@ -3,9 +3,9 @@ class Solution {
         
         HashSet<Integer>set=new HashSet<>();
         
-        for(int i=0;i<nums.length;i++){
-            if(set.contains(nums[i])==false){
-                set.add(nums[i]);
+        for(int i:nums){
+            if(set.contains(i)==false){
+                set.add(i);
             }
             else{
                 return true;
