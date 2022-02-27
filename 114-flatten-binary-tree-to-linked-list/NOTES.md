@@ -23,4 +23,3 @@ System.out.println(preorder);
 ArrayList<String> ans = new ArrayList<>();
 int i = 0 ;
 while(i < preorder.size()-1){
-ans.add(""+preorder.get(i));
