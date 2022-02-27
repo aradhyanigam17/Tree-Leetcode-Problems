@@ -39,8 +39,8 @@ class Solution {
         Deque<TreeNode> st = new ArrayDeque<>(); 
         st.push(root); 
         while(!st.isEmpty()) {
-            TreeNode cur = st.peek();
-            st.pop();
+            TreeNode cur = st.pop();
+            
             
             if(cur.right != null) {
                 st.push(cur.right); 
@@ -58,7 +58,8 @@ class Solution {
 }
 
 
-/* //Recursive approach
+/* //Recursive approach 
+    // 0ms 
 class Solution {
     TreeNode prev = null ;
     public void flatten(TreeNode root) {
