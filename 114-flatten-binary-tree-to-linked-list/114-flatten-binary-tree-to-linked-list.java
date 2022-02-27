@@ -13,6 +13,7 @@
  *     }
  * }
  */
+/* // recursive approach 
 class Solution {
     TreeNode prev = null ;
     public void flatten(TreeNode root) {
@@ -27,3 +28,50 @@ class Solution {
         prev = root ;
     }
 }
+
+*/
+
+class Solution {
+    
+    public void flatten(TreeNode root){
+         if(root == null) return; 
+        
+        Deque<TreeNode> st = new ArrayDeque<>(); 
+        st.push(root); 
+        while(!st.isEmpty()) {
+            TreeNode cur = st.peek();
+            st.pop();
+            
+            if(cur.right != null) {
+                st.push(cur.right); 
+            }
+            if(cur.left != null) {
+                st.push(cur.left); 
+            }
+            if(!st.isEmpty()) {
+                cur.right = st.peek(); 
+            }
+            cur.left = null;
+         }
+    }
+    
+}
+
+
+/* //Recursive approach
+class Solution {
+    TreeNode prev = null ;
+    public void flatten(TreeNode root) {
+        if(root == null) return ;
+        
+        flatten(root.right);
+        flatten(root.left) ;
+        
+        root.right = prev ;
+        root.left = null ;
+        
+        prev = root ;
+    }
+}
+
+*/
