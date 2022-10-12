@@ -10,24 +10,21 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ArrayList<Integer> list = new ArrayList<>() ;
+        if(head == null) return head ;
+        ListNode prev = null ;
+        ListNode present = head ;
+        ListNode next = head.next ;
         
-        ListNode dup = head ;
         
-        while(dup != null){
-            list.add(dup.val) ;
-            dup = dup.next ;
+        while(present != null){
+            present.next = prev ;
+            prev = present ;
+            present = next ;
+            if(next != null){
+                next = next.next ;
+            }
         }
         
-        dup = new ListNode() ;
-        ListNode duphead = dup ;
-        
-        for(int i = list.size() - 1 ; i >= 0 ; i--){
-            ListNode nextnode  = new ListNode(list.get(i)) ;
-            duphead.next = nextnode ;
-            duphead = duphead.next ;
-        }
-        
-        return dup.next ;
+        return prev ;
     }
 }
