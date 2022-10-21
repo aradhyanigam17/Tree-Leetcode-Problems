@@ -24,32 +24,29 @@ class Solution {
         
         while(list1 != null && list2 != null){
             if(list1.val < list2.val){
-                 int value = list1.val ;
-                next.next = new ListNode(value) ;
-                next = next.next ;
-                list1 = list1.next ;
+                 next.next = list1 ;
+                 list1 = list1.next ;
+                 next = next.next;
             }
             
             else {
-                int value = list2.val ;
-                next.next = new ListNode(value) ;
+                next.next = list2 ;
                 next = next.next ;
                 list2 = list2.next ;
+                
             }
             
             
         }
         
         while(list1 != null){
-            int value = list1.val ;
-            next.next = new ListNode(value) ;
+           next.next = list1 ;
             next = next.next ;
             list1 = list1.next ;
         }
         
         while(list2 != null){
-            int value = list2.val ;
-            next.next = new ListNode(value) ;
+            next.next = list2 ;
             next = next.next ;
             list2 = list2.next ;
         }
