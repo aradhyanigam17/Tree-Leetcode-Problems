@@ -17,7 +17,7 @@ class Solution {
                 count++ ;
             }
             
-            if(i == t.length() - 1 && count < s.length()) return false ;
+            // if(i == t.length() - 1 && count < s.length()) return false ;
         }   
         return count == s.length() ;
     }
