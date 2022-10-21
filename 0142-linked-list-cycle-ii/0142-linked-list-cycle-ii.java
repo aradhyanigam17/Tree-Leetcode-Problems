@@ -31,7 +31,7 @@ public class Solution {
         
         slow = head ;
         
-        while(slow != fast){
+        while(fast != null && slow != fast){
             slow = slow.next ;
             fast = fast.next ; 
         }
