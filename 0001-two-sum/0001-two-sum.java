@@ -10,7 +10,7 @@ class Solution {
             if(map.containsKey(want)){
                 ans[0] = i ;
                 ans[1] = map.get(want) ;
-                // break ;
+                break ;
             }
             
             else {
