@@ -12,7 +12,7 @@ class Solution {
         // int count = 0 ; 
         int j = 0 ; 
         
-        for(int i = 0 ; i < t.length() ; i++){
+        for(int i = 0 ; i < t.length() && j < s.length() ; i++){
             if(t.charAt(i) == s.charAt(j)){
                 j++;
                 if(j == s.length()){
