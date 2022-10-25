@@ -1,12 +1,12 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        if(s.length() == 0){
-            return true ;
-        }
+//         if(s.length() == 0){
+//             return true ;
+//         }
         
-        if(t.length() == 0 || t.length() < s.length()){
-            return false ;
-        }
+//         if(t.length() == 0 || t.length() < s.length()){
+//             return false ;
+//         }
         
         
         // int count = 0 ; 
