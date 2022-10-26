@@ -10,6 +10,10 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
+        if(head == null){
+            return head ;
+        }
+        
         ListNode slow = head ;
         ListNode fast = head ;
         
@@ -17,8 +21,7 @@ class Solution {
             slow = slow.next ;
             fast = fast.next.next ;
         }
-    
-        return slow ;
         
+        return slow ;
     }
 }
