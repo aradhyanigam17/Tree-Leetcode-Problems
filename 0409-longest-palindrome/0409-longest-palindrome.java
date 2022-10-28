@@ -1,35 +1,43 @@
 class Solution {
     public int longestPalindrome(String s) {
-        if(s.length() == 1){
-            return 1 ;
-        }
-        
-        Map<Character, Integer> map = new HashMap<>() ;
+        int[] uppercase = new int[26] ; 
+        int[] lowercase = new int[26] ;
         
         for(char ch : s.toCharArray()){
-            if(map.containsKey(ch))
-            {
-                map.put(ch,map.get(ch) + 1);
-                
+            if(ch - 97 >= 0){
+                lowercase[ch - 97]++ ;
             }   
-            
-            else map.put(ch,1) ;
+            else uppercase[ch - 65]++ ;
         }
         
-        int len = 0 ;
+        
+        int count = 0 ;
         boolean odd = false ;
-        for(int count : map.values())
-        {
-            if(count % 2 == 0 ) len += count ;
+        
+        for(int i = 0 ; i < uppercase.length ; i++){
+            if(uppercase[i] % 2 == 0){
+                count += uppercase[i] ; 
+            } 
             else {
                 odd = true ;
-                len += count - 1;                
+                count += uppercase[i] - 1 ;
             }
-        }        
+        }
+        
+         for(int i = 0 ; i < lowercase.length ; i++){
+            if(lowercase[i] % 2 == 0){
+                count += lowercase[i] ; 
+            } 
+            else {
+                odd = true ;
+                count += lowercase[i] - 1 ;
+            }
+        }
         
         if(odd){
-            len += 1 ;
+            count += 1 ;
         }
-        return len ;
+        
+        return count ;
     }
 }
