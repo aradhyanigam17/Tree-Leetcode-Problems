@@ -22,14 +22,18 @@ class Solution {
         {
             if(count % 2 == 0 ) len += count ;
             else {
-                odd = true ;
-                len += count - 1 ;
+                if(!odd){
+                    odd = true ;
+                    len += count ;
+                }
+                else {
+                    len += count - 1 ;
+                }
+                
             }
         }        
         
-        if(odd){
-            len += 1 ;
-        }
+       
         return len ;
     }
 }
