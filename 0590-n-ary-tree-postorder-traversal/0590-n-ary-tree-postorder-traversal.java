@@ -20,7 +20,7 @@ class Node {
 class Solution {
     public List<Integer> postorder(Node root) {
                 
-        List<Integer> post = new ArrayList<>() ;
+        ArrayList<Integer> post = new ArrayList<>() ;
         
         if(root == null){
             return post ;
@@ -31,7 +31,7 @@ class Solution {
         return post ;
     }
     
-    public void postAdd(Node node , List<Integer> list){
+    public void postAdd(Node node , ArrayList<Integer> list){
         if(node == null){
             return ;
         }
