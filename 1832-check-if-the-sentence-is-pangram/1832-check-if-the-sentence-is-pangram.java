@@ -6,7 +6,6 @@ class Solution {
             set.add(ch);    
         }
         
-        System.out.println(set.size()) ;
         return set.size() == 26 ;
     }      
 }
