@@ -1,21 +1,17 @@
 class Solution {
     public int fib(int n) {
-        int[] storage = new int[n + 1] ;
-        
-        return fibo(n , storage) ;
-    }
-    
-    public int fibo(int n , int[] storage){
         if(n < 2){
             return n ;
         }
+        int [] storage = new int[n + 1] ;
         
-        if(storage[n] != 0){
-            return storage[n];
+        storage[0] = 0 ;
+        storage[1] = 1 ;
+        
+        for(int i = 2 ; i <= n ;i++){
+            storage[i] = storage[i - 1] + storage[i - 2] ;
         }
         
-        
-        storage[n] = fibo(n - 1 , storage) + fibo(n - 2 , storage) ;
         
         return storage[n] ;
     }
