@@ -15,16 +15,48 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
+       
+        
         if(p == null && q == null){
             return true ;
         }
-        if(p == null){
+        
+        if(p == null ){
             return false ;
         }
-        
         if(q == null){
             return false ;
         }
-        return p.val == q.val && isSameTree(p.left , q.left) && isSameTree(p.right,q.right) ;
+        
+        List<Integer> listp = preorder(p) ;
+        List<Integer> listq = preorder(q) ;
+        
+        
+        return listp.equals(listq) ;
+    }
+    
+    
+    public List<Integer> preorder(TreeNode node){
+        if(node == null){
+            return null; 
+        }
+        
+        ArrayList<Integer> pre = new ArrayList<>() ;
+        
+        preOrder(node , pre) ;
+        
+        return pre ;
+    }
+    
+    
+    public void preOrder(TreeNode node , ArrayList<Integer> list ){
+        if(node == null){
+            list.add(0) ;
+            return  ;
+        }
+        
+        list.add(node.val) ;
+        preOrder(node.left, list) ;
+        preOrder(node.right,list) ;
     }
 }
