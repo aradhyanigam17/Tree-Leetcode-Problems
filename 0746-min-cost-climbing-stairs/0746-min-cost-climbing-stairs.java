@@ -1,5 +1,28 @@
 class Solution {
     
+    public int minCostClimbingStairs(int[] cost){
+          int n = cost.length;
+          if(n == 0){
+              return cost[0] ;
+          }
+        
+        if(n == 1){
+            return cost[1] ;
+        }
+        
+        int[] storage = new int[n + 1] ;
+        storage[0] = cost[0] ;
+        storage[1] = cost[1] ;
+        
+        for(int i = 2 ; i < n ; i++){
+            storage[i] = cost[i] + Math.min(storage[i - 1] , storage[i - 2]);
+        }
+        
+        return Math.min(storage[n - 1] , storage[n - 2]) ;
+        
+    }
+
+    /*
      public int minCostClimbingStairs(int[] cost){
          
          int n = cost.length ;
@@ -27,7 +50,7 @@ class Solution {
         storage[n] = cost[n] + Math.min(helper(n - 1,cost,storage) , helper(n - 2 , cost ,storage));
         return storage[n] ;
     }
-    
+    */
     
    /*
    public int minCostClimbingStairs(int[] cost) {
