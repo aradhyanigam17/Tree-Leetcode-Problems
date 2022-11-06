@@ -1,30 +1,27 @@
 class Solution {
     public boolean backspaceCompare(String s, String t) {
+        ArrayList<Character> list1 = new ArrayList<>() ;
+        ArrayList<Character> list2 = new ArrayList<>() ;
+        
 
-        ArrayList<Character> ss = new ArrayList<>() ;
-        for(int i = 0 ;i < s.length() ;i++){
-            if(ss.size() != 0 && s.charAt(i) == '#'){
-                ss.remove(ss.size() - 1) ;
+        for(char ch : s.toCharArray()){
+            if(list1.size() != 0 && ch == '#'){
+              list1.remove(list1.size() - 1) ;
             }
             else {
-                if('a' <= s.charAt(i) && s.charAt(i) <= 'z') {
-                    ss.add(s.charAt(i));
-                }
+                if(ch >= 'a' && ch <='z') list1.add(ch) ;
             }
         }
-        
-        ArrayList<Character> tt = new ArrayList<>() ;
-        for(int i= 0 ; i < t.length() ;i++){
-           if(tt.size() != 0 && t.charAt(i) == '#'){
-                tt.remove(tt.size() - 1) ;
+
+        for(char ch : t.toCharArray()){
+            if(list2.size() != 0 && ch == '#'){
+              list2.remove(list2.size() - 1) ;
             }
             else {
-                if('a' <= t.charAt(i) && t.charAt(i) <= 'z') {
-                    tt.add(t.charAt(i));
-                }
+                if(ch >= 'a' && ch <='z') list2.add(ch) ;
             }
         }
-        
-        return ss.equals(tt) ;
+
+        return list1.equals(list2) ;
     }
 }
